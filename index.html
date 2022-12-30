@@ -1,0 +1,411 @@
+<html>
+    <head>
+        <title> 2022 Hyunwoo Hwang</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="pfStyle.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="jquery.easing.min.js"></script>
+    </head>
+
+    <script>
+        $(window).resize(function(){
+            var winWidth = $(window).width();
+            var boxWidth = $('.thum-pad').width();
+            var mobUxWidth = $('.thum-mob-ux').width();
+            var mobBxWidth = $('.thum-mob-bx').width();
+            var mobMoWidth = $('.thum-mob-mo').width();
+            var mobMuWidth = $('.thum-mob-mu').width();
+
+            if(winWidth <= 1320){
+                $('.thum-pad').height(boxWidth*1);
+            }
+
+            if(winWidth <= 768){
+                $('.thum-mob-ux').height(mobUxWidth*1);
+                $('.thum-mob-bx').height(mobBxWidth*1);
+                $('.thum-mob-mo').height(mobMoWidth*1);
+                $('.thum-mob-mu').height(mobMuWidth*1);
+            }
+        });
+
+        $(document).ready(function(){
+            $('.bar').animate({left:'0px',opacity:1},700,'easeInOutBack');
+            $('#wux').hide();
+            $('#wux1').hide();
+            $('#wux2').hide();
+            $('#wbx').hide();
+            $('#wmo').hide();
+            $('#wmo2').hide();
+            $('#wmu').hide();
+            $('#end-title').hide();
+            
+            
+            $('#wux').show(600,'easeOutExpo');
+            $('#wux1').show(300,'easeOutExpo');
+            $('#wux2').show(500,'easeOutExpo');
+            $('#wbx').show(200,'easeOutExpo');
+            $('#wmo').show(700,'easeOutExpo');
+            $('#wmo2').show(200,'easeOutExpo');
+            $('#wmu').show(500,'easeOutExpo');
+            $('#end-title').show(600,'easeOutExpo');
+
+            $('#nav-all').click(function(){
+                $('.bar').stop().animate({left:'0px'},100,'easeOutExpo');
+                $('#nav-all').stop().animate({opacity: 100},100,'easeOutExpo');
+                $('#nav-ux').stop().animate({opacity: '20%'},100,'easeOutExpo');
+                $('#nav-bx').stop().animate({opacity: '20%'},100,'easeOutExpo');
+                $('#nav-mot').stop().animate({opacity: '20%'},100,'easeOutExpo');
+                $('#nav-mus').stop().animate({opacity: '20%'},100,'easeOutExpo');
+
+                // 썸네일 재노출 데스크톱
+                $('#wux').stop().show(300,'easeOutExpo');
+                $('#wux1').stop().show(300,'easeOutExpo');
+                $('#wux2').stop().show(300,'easeOutExpo');
+                $('#wbx').stop().animate({width: '290px',height: '290px'},300,'easeOutExpo');
+                $('#wbx').show(300,'easeOutExpo');
+                $('#wmo').stop().show(300,'easeOutExpo');
+                $('#wmo2').stop().show(300,'easeOutExpo');
+                $('#wmu').stop().animate({width: '400px',height: '400px'},300,'easeOutExpo');
+                $('#wmu').show(300,'easeOutExpo');
+                $('#end-title').stop().show(300,'easeOutExpo');
+                $('.thum-group').stop().show(300,'easeOutExpo');
+
+                // 썸네일 재노출 
+                
+            });
+            
+            $('#nav-ux').click(function(){
+                // 네비
+                $('.bar').stop().animate({left:'130px'},100,'easeOutExpo');
+                $('#nav-ux').stop().animate({opacity: '100%'},100,'easeOutExpo');
+                $('#nav-all').stop().animate({opacity: '20%'},100,'easeOutExpo');
+                $('#nav-bx').stop().animate({opacity: '20%'},100,'easeOutExpo');
+                $('#nav-mot').stop().animate({opacity: '20%'},100,'easeOutExpo');
+                $('#nav-mus').stop().animate({opacity: '20%'},100,'easeOutExpo');
+
+                // 썸네일 재노출
+                $('#wux').show(300,'easeOutExpo');
+                $('#wux1').show(500,'easeOutExpo');
+                $('#wux2').show(500,'easeOutExpo');
+                $('.thum-group').show(300,'easeOutExpo');
+                
+                // 썸네일 사라짐
+                $('#wbx').hide();
+                $('#wmo').hide(300,'easeOutExpo');
+                $('#wmo2').hide(300,'easeOutExpo');
+                $('#wmu').hide(300,'easeOutExpo');
+                $('#end-title').hide(300,'easeOutExpo');
+            });
+
+            $('#nav-bx').click(function(){
+                
+                //네비
+                $('.bar').stop().animate({left:'260px'},100,'easeOutExpo');
+                $('#nav-bx').stop().animate({opacity: '100%'},100,'easeOutExpo');
+                $('#nav-all').stop().animate({opacity: '20%'},100,'easeOutExpo');
+                $('#nav-ux').stop().animate({opacity: '20%'},100,'easeOutExpo');
+                $('#nav-mot').stop().animate({opacity: '20%'},100,'easeOutExpo');
+                $('#nav-mus').stop().animate({opacity: '20%'},100,'easeOutExpo');
+
+                // 썸네일 재노출
+                $('.thum-group').show(300,'easeOutExpo');
+                $('#wbx').show(300,'easeOutExpo');
+                $('#wbx').stop().animate({width: '620px', height: '620px'},300,'easeOutExpo');
+                
+                // 썸네일 사라짐
+                $('#wux').hide(300,'easeOutExpo');
+                $('#wux1').hide(300,'easeOutExpo');
+                $('#wux2').hide(300,'easeOutExpo');
+                $('#wmo').hide(300,'easeOutExpo');
+                $('#wmo2').hide(300,'easeOutExpo');
+                $('#wmu').hide(300,'easeOutExpo');
+                $('#end-title').hide(300,'easeOutExpo');
+            
+                
+            });
+
+            $('#nav-mot').click(function(){
+                
+                //네비
+                $('#wmu').hide().animate({width: '400px',height: '400px'},100,'easeOutExpo');
+                $('.bar').stop().animate({left:'390px'},100,'easeOutExpo');
+                $('#nav-mot').stop().animate({opacity: '100%'},100,'easeOutExpo');
+                $('#nav-all').stop().animate({opacity: '20%'},100,'easeOutExpo');
+                $('#nav-bx').stop().animate({opacity: '20%'},100,'easeOutExpo');
+                $('#nav-ux').stop().animate({opacity: '20%'},100,'easeOutExpo');
+                $('#nav-mus').stop().animate({opacity: '20%'},100,'easeOutExpo');
+
+                // 썸네일 재노출
+                $('#wmo').show(300,'easeOutExpo');
+                $('#wmo2').show(500,'easeOutExpo');
+                
+                // 썸네일 사라짐
+                $('#wux').hide(300,'easeOutExpo');
+                $('#wux1').hide(300,'easeOutExpo');
+                $('#wux2').hide(300,'easeOutExpo');
+                $('#wbx').hide(300,'easeOutExpo');
+                $('.thum-group').hide(300,'easeOutExpo');
+                $('#end-title').hide(300,'easeOutExpo');
+            });
+
+            $('#nav-mus').click(function(){
+
+                //네비
+                $('.bar').stop().animate({left:'520px'},100,'easeOutExpo');
+                $('#nav-mus').stop().animate({opacity: '100%'},100,'easeOutExpo');
+                $('#nav-all').stop().animate({opacity: '20%'},100,'easeOutExpo');
+                $('#nav-bx').stop().animate({opacity: '20%'},100,'easeOutExpo');
+                $('#nav-mot').stop().animate({opacity: '20%'},100,'easeOutExpo');
+                $('#nav-ux').stop().animate({opacity: '20%'},100,'easeOutExpo');
+
+                // 썸네일 재노출
+                $('#wmu').show(300,'easeOutExpo');
+                $('#wmu').stop().animate({width: '620px', height: '620px'},300,'easeOutExpo');
+                
+                // 썸네일 사라짐
+                $('#wux').hide(300,'easeOutExpo');
+                $('#wux1').hide(300,'easeOutExpo');
+                $('#wux2').hide(300,'easeOutExpo');
+                $('#wbx').hide(300,'easeOutExpo');
+                $('.thum-group').hide(300,'easeOutExpo');
+                $('#wmo').hide(300,'easeOutExpo');
+                $('#wmo2').hide(300,'easeOutExpo');
+                $('#end-title').hide(300,'easeOutExpo');
+            });
+        });
+            
+    </script>
+
+    <body>
+        <div class = "header">
+            <div class = "head-con">
+                <div class = "home-logo"><img src = "iconImg/nav_logo.svg"></div>
+                <div class = "navi">
+                    <div class ="part">About</div>
+                    <div class ="part" id = "now">Portfolio</div>
+                    <div class ="part">Contact</div>
+                </div>
+
+                <div class = "mobile-icon">
+                    <img src = "iconImg/m_hamburger.svg">
+                </div>
+
+
+            </div>
+        </div>
+
+        <main>
+            <div class = "banner">
+                <div class = "title">Ready to deliver a new experience</div>
+                <div class = "sub-title">
+                    <h2>새로운 경험을 제공할 디자이너 황현우의 준비</h2>
+                    <p>새로운 차원의 경험을 제공하고 탐구하고자 준비한 황현우의 작업물입니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class = "mid-navi">
+                <div class = "bar"></div>
+                <div class = "nav-part" id = "nav-all">All</div>
+                <div class = "nav-part" id = "nav-ux">UX</div>
+                <div class = "nav-part" id = "nav-bx">BX</div>
+                <div class = "nav-part" id = "nav-mot">Motion</div>
+                <div class = "nav-part" id = "nav-mus">Music</div>
+            </div>
+
+            <div class = "thum-con">
+                <div class = "thum-big" id = "wux">
+                    <img src = "workImg/studio_wagglez.jpg">
+                    <div class = "tag-con">
+                        <div class = "tag" id = "s">UX</div>
+                    </div>
+                </div>
+
+                <div class = "thum-group">
+                    <div class = "thum" id = "wux1">
+                        <div class = "tag-con">
+                            <div class = "tag" id = "s">UX</div>
+                        </div>
+                    </div>
+                    <div class = "thum" id = "wux2">
+                        <div class = "tag-con">
+                            <div class = "tag" id = "s">UX</div>
+                        </div>
+                    </div>
+                    <div class = "thum" id = "wbx">
+                        <div class = "tag-con">
+                            <div class = "tag" id = "s">BX</div>
+                        </div>
+                    </div>
+                    <div class = "thum" id = "end-title">
+                        <img src = "iconImg/p_uTitle.svg">
+                    </div>
+                    
+                </div>
+
+                <div class = "thum-mid-group">
+
+
+                    <div class = "thum-mid" id = "wmo">
+                        <div class = "tag-con">
+                            <div class = "tag" id = "w">Motion</div>
+                        </div>
+                    </div>
+
+                    <div class = "thum-mid" id = "wmo2">
+                        <div class = "tag-con">
+                            <div class = "tag" id = "w">Motion</div>
+                        </div>
+                    </div>
+
+                    <div class = "thum-mid" id = "wmu">
+                        <div class = "tag-con">
+                            <div class = "tag" id = "wb">Music</div>
+                        </div>
+                        <img src = "workImg/first_album.jpg">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 패드 아이템들 -->
+
+            <div class = "thum-pad-con">
+                <div class = "thum-pad" id = "wagglez"> 
+                    <div class = "tag-con">
+                        <div class = "tag" id = "s">UX</div>
+                    </div>
+                    <img src = "workImg/studio_wagglez.jpg">
+                </div>
+
+                <!-- Wagglez -->
+
+                <div class = "thum-pad" id = "mom">
+                    <div class = "tag-con">
+                        <div class = "tag" id = "s">UX</div>
+                    </div>
+                    <img src = "workImg/studio_wagglez.jpg">
+                </div>
+
+                <!-- Moms Profile -->
+            </div>
+
+            <div class = "thum-pad-con">
+
+                <div class = "thum-pad" id = "step">
+                    <div class = "tag-con">
+                        <div class = "tag" id = "s">UX</div>
+                    </div>
+                    <img src = "workImg/studio_wagglez.jpg">
+                </div>
+
+                <!-- Step By -->
+
+                <div class = "thum-pad" id = "onmubang">
+                    <div class = "tag-con">
+                        <div class = "tag" id = "s">BX</div>
+                    </div>
+                    <img src = "workImg/studio_wagglez.jpg">
+                </div>
+
+                <!-- Onmubang -->
+            </div>
+
+            <div class = "thum-pad-con">
+
+                <div class = "thum-pad" id = "school">
+                    <div class = "tag-con">
+                        <div class = "tag" id = "w">Motion</div>
+                    </div>
+                    <img src = "workImg/studio_wagglez.jpg">
+                    <!-- 학과홍보영상 -->
+                </div>
+
+                <div class = "thum-pad" id = "hixx">
+                    <div class = "tag-con">
+                        <div class = "tag" id = "w">Motion</div>
+                    </div>
+                    <img src = "workImg/studio_wagglez.jpg">
+                    <!-- HIXX -->
+                </div>
+            </div>
+
+            <div class = "thum-pad-con">
+                <div class = "thum-pad">
+                    <div class = "tag-con">
+                        <div class = "tag" id = "wb">Music</div>
+                    </div>
+                    <img src = "workImg/first_album.jpg">
+                    <!-- 앨범 -->
+                </div>
+
+                <div class = "thum-pad">
+                    <img src = "iconImg/p_uTitle.svg">
+                    <!-- 텍스트 -->
+                </div>
+            </div>
+
+            <!-- 모바일 아이템들 -->
+            <div class = "thum-mob-con">
+                <div class = "thum-mob-ux">
+                    <div class = "tag-con">
+                        <div class = "tag" id = "s">UX</div>
+                    </div>
+                    <img src = "workImg/studio_wagglez.jpg">
+                </div>
+
+                <div class = "thum-mob-ux">
+                    <div class = "tag-con">
+                        <div class = "tag" id = "s">UX</div>
+                    </div>
+                    <img src = "workImg/studio_wagglez.jpg">
+                </div>
+
+                <div class = "thum-mob-ux">
+                    <div class = "tag-con">
+                        <div class = "tag" id = "s">UX</div>
+                    </div>
+                    <img src = "workImg/studio_wagglez.jpg">
+                </div>
+
+                <div class = "thum-mob-bx">
+                    <div class = "tag-con">
+                        <div class = "tag" id = "s">BX</div>
+                    </div>
+                    <img src = "workImg/studio_wagglez.jpg">
+                </div>
+
+                <div class = "thum-mob-mo">
+                    <div class = "tag-con">
+                        <div class = "tag" id = "w">Motion</div>
+                    </div>
+                    <img src = "workImg/studio_wagglez.jpg">
+                </div>
+
+                <div class = "thum-mob-mo">
+                    <div class = "tag-con">
+                        <div class = "tag" id = "w">Motion</div>
+                    </div>
+                    <img src = "workImg/studio_wagglez.jpg">
+                </div>
+
+                <div class = "thum-mob-mu">
+                    <div class = "tag-con">
+                        <div class = "tag" id = "wb">Music</div>
+                    </div>
+                    <img src = "workImg/first_album.jpg">
+                </div>
+
+                <div class = "thum-mob-mu" id = "met">
+                    <img src = "iconImg/m_uTitle.svg">
+                </div>
+                
+
+            </div>
+
+            
+
+
+        </main>
+    </body>
