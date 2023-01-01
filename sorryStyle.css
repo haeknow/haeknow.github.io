@@ -1,0 +1,53 @@
+.contain{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width:1330px;
+    height:auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    /* border: solid 2px red; */
+    justify-content: center;
+}
+
+.sorryImg{
+    position: relative;
+    width:200px;
+    height: auto;
+    /* border: solid 2px red; */
+    margin:20px;
+}
+
+.sorryImg img{
+    position: relative;
+    width:100%;
+}
+
+
+.sorryText{
+    position: relative;
+    width:100%;
+    text-align: center;
+    font-family: 'pretendard', sans-serif;
+    margin:22px;
+    letter-spacing: -0.04rem;
+    color:#777777;
+    line-height: 26px;
+}
+
+@media all and (max-width: 1024px) {
+    h3{
+        font-size: 18px;
+    }
+
+    p{
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .contain{
+        width:90vw;
+        border:solid 2px red;
+    }
+}

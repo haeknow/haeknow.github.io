@@ -1,24 +1,10 @@
-
-
-@font-face {
-    font-family: 'gilroy-eBold';
-    src: url('font/Gilroy-ExtraBold.ttf') format('turetype');
+.thum-mob-con{
+    display: none;
 }
 
-@font-face {
-    font-family: 'gilroy-bold';
-    src: url('font/Gilroy-Bold.ttf') format('turetype');
-}
+/* *{border: solid 2px red;} */
 
-@font-face {
-    font-family: 'gilroy-semibold';
-    src: url('font/Gilroy-SemiBold.ttf') format('turetype');
-}
-
-@font-face {
-    font-family: 'gilroy-medium';
-    src: url('font/Gilroy-Medium.ttf') format('turetype');
-}
+@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
 
 body {
     height:1500px;
@@ -37,7 +23,7 @@ p{
     font-family: pretendard, sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size:16px;
+    font-size:18px;
     line-height: 30px;
     margin: 0;
 }
@@ -80,10 +66,11 @@ body{margin: 0;}
     top:50%;
     transform: translateY(-50%);
     width:100px;
-    height:32px;
     align-items: center;
+}
 
-    
+.home-logo{
+    height:100%;
 }
 
 .navi{
@@ -102,7 +89,7 @@ body{margin: 0;}
 }
 
 .part{
-    font-family: 'gilroy-medium';
+    font-family: 'Gilroy-Medium', sans-serif;
     color : #777777;
     font-size: 16px;
     margin-left: 40px;
@@ -111,7 +98,7 @@ body{margin: 0;}
 }
 
 #now {
-    font-family: 'gilroy-Bold';
+    font-family: 'Gilroy-Bold', sans-serif;
     color: #000000;
 }
 
@@ -140,10 +127,10 @@ main{
 .title{
     width: 620px;
     position: relative;
-    font-family: 'gilroy-bold';
-    font-size: 96px;
-    letter-spacing: -0.04em;
-    line-height: 1;
+}
+
+.title img{
+    width:100%;
 }
 
 .sub-title{
@@ -193,7 +180,7 @@ main{
     font-size: 20px;
     color:black;
     opacity: 20%;
-    font-family: 'gilroy-semibold';
+    font-family: 'Gilroy-Bold', sans-serif;
 }
 
 .bar{
@@ -251,9 +238,14 @@ main{
     height:290px;
     background-color: #f2f2f2;
     margin: 20px;
-
-
 }
+
+.thum img{
+    width:100%;
+}
+
+
+
 
 #eTitle{
     width:600px;
@@ -280,6 +272,11 @@ main{
     width:110px;
 }
 
+#sb{
+    background-color: rgba(255, 255, 225, 0.2);
+    width:60px;
+}
+
 #wb{
     background-color: rgba(255, 255, 225, 0.2);
     width:110px;
@@ -289,6 +286,7 @@ main{
     display: inline-flex;
     position: absolute;
     margin:20px;
+    left: 0px;
 }
 
 .tag{
@@ -298,7 +296,7 @@ main{
     height: 40px;
     justify-content: center;
     align-items: center;
-    font-family: 'gilroy-bold';
+    font-family: 'Gilroy-Bold', sans-serif;
     font-size: 16px;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.25);
@@ -416,8 +414,7 @@ main{
     .sub-title h2{
         display: block;
         position: relative;
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 32px;
         margin: 0;
         top:0;
         bottom:none;
@@ -427,11 +424,10 @@ main{
     .sub-title p{
         display: block;
         position: relative;
-        font-size:16px;
-        line-height: 30px;
     }
 
     .mid-navi{
+        display: none;
         width:90vw;
         margin-top: 50px;
         border-bottom: solid #E4E4E4 2px;
@@ -467,6 +463,10 @@ main{
         left:50%;
         transform: translate(-50%,-50%);
         z-index:-3
+    }
+
+    .tag-con{
+        left: auto;
     }
 
     .tag{
@@ -513,7 +513,6 @@ main{
 
     .home-logo{
         width:82px;
-        height:26px;
     }
 
     .header .part{
