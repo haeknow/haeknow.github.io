@@ -13,45 +13,50 @@
         $(window).resize(function(){
             var winWidth = $(window).width();
             var boxWidth = $('.thum-pad').width();
-            var mobUxWidth = $('.thum-mob-ux').width();
-            var mobBxWidth = $('.thum-mob-bx').width();
-            var mobMoWidth = $('.thum-mob-mo').width();
-            var mobMuWidth = $('.thum-mob-mu').width();
+            var boxWidthUx = $('.thum-mob-ux').width();
+            var boxWidthBx = $('.thum-mob-bx').width();
+            var boxWidthMo = $('.thum-mob-mo').width();
+            var boxWidthMu = $('.thum-mob-mu').width();
 
             if(winWidth <= 1320){
                 $('.thum-pad').height(boxWidth*1);
             }
 
             if(winWidth <= 768){
-                $('.thum-mob-ux').height(mobUxWidth*1);
-                $('.thum-mob-bx').height(mobBxWidth*1);
-                $('.thum-mob-mo').height(mobMoWidth*1);
-                $('.thum-mob-mu').height(mobMuWidth*1);
+                $('.thum-mob-ux').height(boxWidthUx*1);
+                $('.thum-mob-bx').height(boxWidthBx*1);
+                $('.thum-mob-mo').height(boxWidthMo*1);
+                $('.thum-mob-mu').height(boxWidthMu*1);
             }
         });
 
         $(document).ready(function(){
+                
             $('.bar').animate({left:'0px',opacity:1},700,'easeInOutBack');
+            $('.mob-nav-con').hide();
             $('#wux').hide();
             $('#wux1').hide();
             $('#wux2').hide();
             $('#wbx').hide();
+            $('#wbx2').hide();
             $('#wmo').hide();
             $('#wmo2').hide();
             $('#wmu').hide();
-            $('#end-title').hide();
+            
             
             
             $('#wux').show(600,'easeOutExpo');
             $('#wux1').show(300,'easeOutExpo');
             $('#wux2').show(500,'easeOutExpo');
             $('#wbx').show(200,'easeOutExpo');
+            $('#wbx2').show(500,'easeOutExpo');
             $('#wmo').show(700,'easeOutExpo');
             $('#wmo2').show(200,'easeOutExpo');
             $('#wmu').show(500,'easeOutExpo');
-            $('#end-title').show(600,'easeOutExpo');
+            
 
             $('#nav-all').click(function(){
+                
                 $('.bar').stop().animate({left:'0px'},100,'easeOutExpo');
                 $('#nav-all').stop().animate({opacity: 100},100,'easeOutExpo');
                 $('#nav-ux').stop().animate({opacity: '20%'},100,'easeOutExpo');
@@ -60,20 +65,24 @@
                 $('#nav-mus').stop().animate({opacity: '20%'},100,'easeOutExpo');
 
                 // 썸네일 재노출 데스크톱
+                $('.thum-group').stop().show(300,'easeOutExpo');
+                $('.thum-group').stop().animate({width: '660px'},300,'easeOutExpo');
                 $('#wux').stop().show(300,'easeOutExpo');
                 $('#wux1').stop().show(300,'easeOutExpo');
                 $('#wux2').stop().show(300,'easeOutExpo');
                 $('#wbx').stop().animate({width: '290px',height: '290px'},300,'easeOutExpo');
                 $('#wbx').show(300,'easeOutExpo');
+                $('#wbx2').stop().animate({width: '290px',height: '290px'},300,'easeOutExpo');
+                $('#wbx2').show(300,'easeOutExpo');
                 $('#wmo').stop().show(300,'easeOutExpo');
                 $('#wmo2').stop().show(300,'easeOutExpo');
                 $('#wmu').stop().animate({width: '400px',height: '400px'},300,'easeOutExpo');
                 $('#wmu').show(300,'easeOutExpo');
                 $('#end-title').stop().show(300,'easeOutExpo');
-                $('.thum-group').stop().show(300,'easeOutExpo');
 
-                // 썸네일 재노출 
-                
+                // 썸네일 재노출 패드
+                $('#wagglez').stop().show(300,'easeOutExpo');
+
             });
             
             $('#nav-ux').click(function(){
@@ -83,24 +92,24 @@
                 $('#nav-all').stop().animate({opacity: '20%'},100,'easeOutExpo');
                 $('#nav-bx').stop().animate({opacity: '20%'},100,'easeOutExpo');
                 $('#nav-mot').stop().animate({opacity: '20%'},100,'easeOutExpo');
-                $('#nav-mus').stop().animate({opacity: '20%'},100,'easeOutExpo');
+                $('#nav-mus').stop().animate({opacity: '20%'},100,'easeOutExpo');                
+                // 썸네일 사라짐
+                $('#wbx').hide();
+                $('#wbx2').hide();
+                $('#wmo').hide(300,'easeOutExpo');
+                $('#wmo2').hide(300,'easeOutExpo');
+                $('#wmu').hide(300,'easeOutExpo');
 
                 // 썸네일 재노출
+                $('.thum-group').stop().show();
+                $('.thum-group').stop().animate({width: '660px'},300,'easeOutExpo');
                 $('#wux').show(300,'easeOutExpo');
                 $('#wux1').show(500,'easeOutExpo');
                 $('#wux2').show(500,'easeOutExpo');
                 $('.thum-group').show(300,'easeOutExpo');
-                
-                // 썸네일 사라짐
-                $('#wbx').hide();
-                $('#wmo').hide(300,'easeOutExpo');
-                $('#wmo2').hide(300,'easeOutExpo');
-                $('#wmu').hide(300,'easeOutExpo');
-                $('#end-title').hide(300,'easeOutExpo');
             });
 
-            $('#nav-bx').click(function(){
-                
+            $('#nav-bx').click(function(){                       
                 //네비
                 $('.bar').stop().animate({left:'260px'},100,'easeOutExpo');
                 $('#nav-bx').stop().animate({opacity: '100%'},100,'easeOutExpo');
@@ -109,10 +118,7 @@
                 $('#nav-mot').stop().animate({opacity: '20%'},100,'easeOutExpo');
                 $('#nav-mus').stop().animate({opacity: '20%'},100,'easeOutExpo');
 
-                // 썸네일 재노출
-                $('.thum-group').show(300,'easeOutExpo');
-                $('#wbx').show(300,'easeOutExpo');
-                $('#wbx').stop().animate({width: '620px', height: '620px'},300,'easeOutExpo');
+                
                 
                 // 썸네일 사라짐
                 $('#wux').hide(300,'easeOutExpo');
@@ -122,11 +128,22 @@
                 $('#wmo2').hide(300,'easeOutExpo');
                 $('#wmu').hide(300,'easeOutExpo');
                 $('#end-title').hide(300,'easeOutExpo');
+
+                // 썸네일 재노출
+                $('.thum-group').show(300,'easeOutExpo');
+                $('.thum-group').stop().animate({width: '100%'},300,'easeOutExpo');
+                $('#wbx').show(300,'easeOutExpo');
+                $('#wbx2').show(300,'easeOutExpo');
+                $('#wbx').stop().animate({width: '400px', height: '400px'},300,'easeOutExpo');
+                $('#wbx2').stop().animate({width: '400px', height: '400px'},300,'easeOutExpo');
             
                 
             });
 
             $('#nav-mot').click(function(){
+
+                $('.thum-group').stop().animate({width: '660px'},300,'easeOutExpo');
+                $('.thum-group').hide();
                 
                 //네비
                 $('#wmu').hide().animate({width: '400px',height: '400px'},100,'easeOutExpo');
@@ -142,11 +159,12 @@
                 $('#wmo2').show(500,'easeOutExpo');
                 
                 // 썸네일 사라짐
+                
                 $('#wux').hide(300,'easeOutExpo');
                 $('#wux1').hide(300,'easeOutExpo');
                 $('#wux2').hide(300,'easeOutExpo');
                 $('#wbx').hide(300,'easeOutExpo');
-                $('.thum-group').hide(300,'easeOutExpo');
+                $('#wbx2').hide(300,'easeOutExpo');
                 $('#end-title').hide(300,'easeOutExpo');
             });
 
@@ -161,24 +179,47 @@
                 $('#nav-ux').stop().animate({opacity: '20%'},100,'easeOutExpo');
 
                 // 썸네일 재노출
-                $('#wmu').show(300,'easeOutExpo');
-                $('#wmu').stop().animate({width: '620px', height: '620px'},300,'easeOutExpo');
+                $('#nav-ux').stop().animate({opacity: '20%'},100,'easeOutExpo');
+                $('#wmu').stop().animate({width: '400px', height: '400px'},300,'easeOutExpo');
                 
                 // 썸네일 사라짐
                 $('#wux').hide(300,'easeOutExpo');
                 $('#wux1').hide(300,'easeOutExpo');
                 $('#wux2').hide(300,'easeOutExpo');
                 $('#wbx').hide(300,'easeOutExpo');
+                $('#wbx2').hide(300,'easeOutExpo');
                 $('.thum-group').hide(300,'easeOutExpo');
                 $('#wmo').hide(300,'easeOutExpo');
                 $('#wmo2').hide(300,'easeOutExpo');
                 $('#end-title').hide(300,'easeOutExpo');
+            });
+
+            $('.mobile-icon').click(function(){
+                $('.mob-nav-con').show();
+                $('.mob-nav-con').delay(10).animate({opacity:'100%'},300,'easeOutExpo');
+            });
+
+            $('.mobile-icon-close').click(function(){
+                $('.mob-nav-con').stop().animate({opacity:'0%'},300,'easeOutExpo');
+                $('.mob-nav-con').hide();
+                
             });
         });
             
     </script>
 
     <body>
+
+        <div class = "mob-nav-con">
+            <div class = "mobile-icon-close">
+                <img src = "iconImg/m_close.svg">
+            </div>
+            <div class = "mob-part" href = "waiting.html">About</div>
+            <div class = "mob-part" id = "mob-now">Portfolio</div>
+            <div class = "mob-tag">10</div>
+            <div class = "mob-part" href = "waiting.html">Contact</div>
+        </div>
+
         <div class = "header">
             <div class = "head-con">
                 <a class = "home-logo" href="index.html"><img src = "iconImg/nav_logo.svg"></a>
@@ -243,7 +284,7 @@
                             <div class = "tag" id = "s">BX</div>
                         </div>
                     </div>
-                    <div class = "thum" id = "end-title">
+                    <div class = "thum" id = "wbx2">
                         <img src = "workImg/daegu_thum.jpg">
                         <div class = "tag-con">
                             <div class = "tag" id = "s">BX</div>
@@ -270,10 +311,10 @@
                     </div>
 
                     <div class = "thum-mid" id = "wmu">
+                        <img src = "workImg/first_album.jpg">
                         <div class = "tag-con">
                             <div class = "tag" id = "wb">Music</div>
                         </div>
-                        <img src = "workImg/first_album.jpg">
                     </div>
                 </div>
 
@@ -324,7 +365,7 @@
 
             <div class = "thum-pad-con">
 
-                <div class = "thum-pad" id = "school">
+                <div class = "thum-pad" id = "daegu">
                     <div class = "tag-con">
                         <div class = "tag" id = "s">BX</div>
                     </div>
@@ -332,7 +373,7 @@
                     <!-- 학과홍보영상 -->
                 </div>
 
-                <div class = "thum-pad" id = "hixx">
+                <div class = "thum-pad" id = "school">
                     <div class = "tag-con">
                         <div class = "tag" id = "w">Motion</div>
                     </div>
@@ -342,7 +383,7 @@
             </div>
 
             <div class = "thum-pad-con">
-                <div class = "thum-pad">
+                <div class = "thum-pad" id = "hixx">
                     <div class = "tag-con">
                         <div class = "tag" id = "wb">Motion</div>
                     </div>
@@ -350,7 +391,7 @@
                     <!-- 앨범 -->
                 </div>
 
-                <div class = "thum-pad">
+                <div class = "thum-pad" id = "album">
                     <div class = "tag-con">
                         <div class = "tag" id = "wb">Music</div>
                     </div>
@@ -389,9 +430,9 @@
                     <img src = "workImg/onmub_thum.jpg">
                 </div>
 
-                <div class = "thum-mob-mo">
+                <div class = "thum-mob-bx">
                     <div class = "tag-con">
-                        <div class = "tag" id = "w">Motion</div>
+                        <div class = "tag" id = "s">BX</div>
                     </div>
                     <img src = "workImg/daegu_thum.jpg">
                 </div>
@@ -403,9 +444,9 @@
                     <img src = "workImg/school_thum.jpg">
                 </div>
 
-                <div class = "thum-mob-mu">
+                <div class = "thum-mob-mo">
                     <div class = "tag-con">
-                        <div class = "tag" id = "wb">Music</div>
+                        <div class = "tag" id = "wb">Motion</div>
                     </div>
                     <img src = "workImg/hixx_thum.png">
                 </div>
@@ -415,12 +456,7 @@
                         <div class = "tag" id = "wb">Music</div>
                     </div>
                     <img src = "workImg/first_album.jpg">
-                </div>
-
-                <!-- <div class = "thum-mob-mu" id = "met">
-                    <img src = "workImg/first_album.jpg">
-                </div> -->
-                
+                </div>             
 
             </div>
 
